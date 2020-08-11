@@ -1,0 +1,5 @@
+com\cjw\demo\entity\User.class
+com\cjw\demo\service\impl\UserServiceImpl.class
+com\cjw\demo\service\UserService.class
+com\cjw\demo\controller\UserController.class
+com\cjw\demo\DemoApplication.class

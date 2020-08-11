@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="C:\Users\yangle\Desktop\dome\src\main\resources\application.properties"/>
+
+    <typeAliases>
+        <typeAlias type="com.cjw.demo.entity.User" alias="test"/>
+    </typeAliases>
+    <!--引入外部文件 properties   其中resources引入类文件，url因为网络或者磁盘下的资源-->
+
+    <!-- mybatis的环境配置,此信息在开发中只需照搬即可 -->
+    <environments default="development">
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver1}"/>
+                <property name="url" value="${jdbc.url1}"/>
+                <property name="username" value="${jdbc.username1}"/>
+                <property name="password" value="${jdbc.password1}"/>
+            </dataSource>
+        </environment>
+        
+        <environment id="development">
+            <!-- 配置JDBC事务,此事务由mybatis管理 -->
+            <transactionManager type="JDBC"/>
+            <!-- 配置连接池,此连接池为mybatis连接池 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                 <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="C:\Users\yangle\Desktop\dome\src\main\resources\mapper\UserMapper.xml"/>
+    </mappers>
+</configuration>
